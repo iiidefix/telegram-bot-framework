@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('BOT_TOKEN') {
+if (!defined('BOT_TOKEN')) {
 	throw new Exception('BOT_TOKEN not defined.');
 }
 
@@ -158,6 +158,7 @@ function processMessage($message) { // process incoming message
 		"video_note",
 		"contact",
 		"location",
+		"venue",
 	);
 	foreach($message_types as $mt) {
 		if (isset($message[$mt]) && function_exists('process_'.$mt)) {
